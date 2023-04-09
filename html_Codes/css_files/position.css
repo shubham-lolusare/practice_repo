@@ -1,0 +1,8 @@
+.class1 {
+    border: 2px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    inline-size: 80vw;
+    block-size: 80vh;
+    
+}

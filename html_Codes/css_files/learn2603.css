@@ -1,0 +1,9 @@
+#dataForm {
+  display: grid;
+  grid-template-columns: 100px 300px;
+  gap: 10px;
+}
+
+#submit {
+  grid-area: 6/1/7/3;
+}

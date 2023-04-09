@@ -1,0 +1,408 @@
+/* Selectors 
+1. Simple Selectors
+2. Combinators
+3. Pseudo Classes
+4. Pseudo Elements
+
+Simple selector
+1. Universal Selector *
+2. Class based selectors .
+3. ID selectors #
+4. Attribute selctor [attr] [attr = "value"]
+
+
+Combinators
+1. Descendant selectors " "
+2. Child selectors >
+3. General Sibling slector ~
+4. Adjacent Sibling selector +
+
+Pseudo classes : based on state
+Pseudo Elements :: based on location
+
+, Grouping
+
+In the state of conflict with the given properties
+
+Cascading Algorithm
+1. Relevance
+2. Origin and Importance
+3. Specificity
+4. Order of Appearance
+
+1. Checking relevance
+
+2. Origin and importance
+non important properties which are given without !important
+important properties which are given with !important 
+
+Three types of origins
+1. User agent style sheets
+2. User Style sheets
+3. Author stylesheets
+
+Origin Precedence
+
+UA first layer
+ua last layer 
+ua unlayered
+user first layer
+user last layer
+user unlayered
+author first layer
+author last layer
+author unlayerd
+author inline
+animations
+
+!important
+author unlayer
+author last layer
+author first layer
+author inline
+user unlayer
+user last layer
+usr first layer
+ua unlayer
+ua last layer
+ua first layer
+transitions
+
+
+3. Specificity
+(no of id slectors, no of class selectors, no of elements)
+
+* {
+  color: red !important;
+}
+
+@layer theme, utilities;
+@layer theme {
+}
+
+@import url("./a_prac_css.css") layer(utilities);
+
+The box model
+Everything in CSS is a box
+
+content box
+padding box
+border box
+margin box
+
+
+Every Element in HTMl is either 
+Block Element
+Inline Element
+
+Block Element display: block
+Inline element display: inline
+
+If outer display type is block
+width and height respect
+margin padding border respect
+
+If outer is inline
+widht and height not respected
+horizontal padding border and margin are respected
+
+
+Layouts
+1. Flow Layout
+2. Floats and Positioning
+3. Flexbox layout
+4. Grid Layout
+5. Multi Column Layout
+
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  position: fixed;
+  top: 20px;
+  left: 100px;
+}
+
+.class2 {
+  width: 150px;
+  height: 150px;
+  border: 5px solid red;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.class3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.nav {
+  height: 150px;
+  border: 5px solid red;
+  background-color: aqua;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+} 
+
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.class2 {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+  flex: 1 1 auto;
+}
+
+.class3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+} 
+
+
+.class1 {
+  border: 5px solid black;
+  display: grid;
+  grid-template:
+    "a . . . b" 250px
+    "a . . . b" 250px
+    "c c d d d" 250px / 100px 100px 100px 100px 100px;
+}
+
+.class2,
+.classa,
+.classb,
+.classc,
+.classd {
+  border: 5px solid green;
+  color: black;
+  font-size: 3rem;
+}
+
+.classa {
+  grid-row: 1/6;
+  grid-column: 1;
+  grid-area: a;
+}
+
+.classb {
+  grid-row: 1/5;
+  grid-column: 2/3;
+  grid-area: b;
+}
+
+.classc {
+  grid-column: c;
+}
+
+.classd {
+  grid-area: d;
+}
+
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  box-sizing: border-box;
+  line-height: 0;
+  font-size: 0;
+}
+
+.class2 {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 1rem;
+  vertical-align: top;
+  margin: 10px 10px 20px 10px;
+}
+
+.class3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+}
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  column-count: 4;
+  column-gap: 30px;
+  column-rule: 5px dotted blue;
+  column-width: 200px;
+}
+
+.class2 {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+  break-inside: avoid;
+}
+
+.class3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+}
+
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  writing-mode: vertical-lr;
+  color: purple;
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+.class2 {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+  break-inside: avoid;
+}
+
+.class3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+}
+
+.class1 {
+  width: 700px;
+  height: 700px;
+  border: 2px solid black;
+  background-color: rgb(255, 0, 0, 0.4);
+  background-image: url("https://media.istockphoto.com/id/614113506/photo/milky-way-over-pogeon-point-lighthouse.jpg?s=612x612&w=0&k=20&c=HunOJrHu1-m1B9SorisMc32tLwO2fqhsdrD6JxPkWCA=");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+:root {
+  --div-height: "<length>";
+}
+.class1 {
+  width: 700px;
+  --container-height: 350px;
+  height: var(--container-height);
+  border: 10px solid black;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.class2 {
+  box-sizing: border-box;
+  width: 100px;
+  --div-height: 50px;
+  height: var(--div-height);
+  border: 10px solid green;
+  position: absolute;
+  top: calc((var(--container-height) / 2) - (var(--div-height) / 2));
+}
+
+.class3 {
+  box-sizing: border-box;
+  width: 200px;
+  --div-height: 100px;
+  height: var(--div-height);
+  border: 10px solid blue;
+  position: absolute;
+  top: calc((var(--container-height) / 2) - (var(--div-height) / 2));
+}
+
+.dropdown {
+  width: 20%;
+}
+
+.dropvalue {
+  padding: 10px;
+  border: 2px ridge green;
+  border-radius: 20px;
+  color: orange;
+  background-color: brown;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px black;
+}
+
+.dropcontainer {
+  padding: 10px;
+  border: 2px ridge green;
+  border-radius: 10px;
+  background-color: brown;
+  position: absolute;
+  display: none;
+  width: 17.5%;
+}
+
+.item {
+  color: orange;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px black;
+  margin: 10px;
+  border-bottom: 2px solid orange;
+  padding-bottom: 10px;
+}
+
+.dropdown:hover .dropcontainer {
+  display: block;
+}
+*/
+
+.button {
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flow-root;
+  box-shadow: 0px 0px 5px black;
+  background-color: antiquewhite;
+}
+
+.switch {
+  width: 40px;
+  height: 41px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  background-color: red;
+  float: left;
+}
+
+#check {
+  width: 39px;
+  height: 32px;
+  border-radius: 50px;
+  padding: 0px;
+  opacity: 0;
+}
+
+#check:checked + .switch {
+  float: right;
+  background-color: green;
+}
+
+.button > input:checked {
+}

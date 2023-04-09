@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 99vw;
+  margin: 0px;
+}
+
+.imageHeading {
+  position: fixed;
+  top: 1rem;
+  left: 40%;
+  color: yellow;
+}
+
+.pageImage {
+  width: 100%;
+}
