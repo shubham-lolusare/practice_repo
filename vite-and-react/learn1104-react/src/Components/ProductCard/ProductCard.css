@@ -1,0 +1,10 @@
+.productCard {
+  border: 2px solid red;
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgoldenrodyellow;
+}
