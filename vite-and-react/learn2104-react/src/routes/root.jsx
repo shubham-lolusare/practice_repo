@@ -22,6 +22,7 @@ export async function loader() {
 export default function Root() {
   const { contacts } = useLoaderData();
   const navigation = useNavigation();
+  console.log(navigation.state);
   return (
     <>
       <div id="sidebar">
